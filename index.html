@@ -1,148 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn English with Teacher Zey</title>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      background-color: #f0f8ff;
-      color: #333;
-    }
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin | Teacher Zey</title>
+    <script src="https://unpkg.com/netlify-identity-widget@1.9.1/build/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 
-    header {
-      background-color: #4b9cd3;
-      color: white;
-      text-align: center;
-      padding: 30px 10px;
-      border-bottom: 5px solid #2f6fa3;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    nav {
-      background-color: #ffffff;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      border-bottom: 2px solid #e0e0e0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #4b9cd3;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #2f6fa3;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #2f6fa3;
-      text-align: center;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin: 20px 0;
-    }
-
-    footer {
-      background-color: #4b9cd3;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    .contact {
-      text-align: center;
-      font-size: 1.1em;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Learn English with Teacher Zey</h1>
-    <p>Fun and easy English lessons for kids and teens!</p>
-  </header>
-
-  <nav>
-    <a href="#lessons">Lessons</a>
-    <a href="#videos">Videos</a>
-    <a href="#worksheets">Worksheets</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="lessons">
-    <h2>📘 Lessons</h2>
-    <div class="card">
-      <h3>Colors in English</h3>
-      <p>Learn the basic colors: red, blue, green, yellow, and more!</p>
-    </div>
-    <div class="card">
-      <h3>Animals</h3>
-      <p>Meet the animals: cat, dog, lion, elephant...</p>
-    </div>
-    <div class="card">
-      <h3>Latest Lessons (from CMS)</h3>
-      <p>If you add lessons from the admin panel, they'll appear here.</p>
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>🎬 Videos</h2>
-    <div class="card">
-      <p>Watch fun videos to practice English pronunciation and speaking!</p>
-      <p><i>Coming soon!</i></p>
-    </div>
-  </section>
-
-  <section id="worksheets">
-    <h2>📝 Worksheets</h2>
-    <div class="card">
-      <p>Download printable exercises to practice at home.</p>
-      <p><i>Available soon!</i></p>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>👩‍🏫 About Teacher Zey</h2>
-    <div class="card">
-      <p>Hello! I'm <strong>Teacher Zey</strong>. I help kids and teens learn English in a fun and easy way.  
-      Let's make learning exciting together! 💙</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>📩 Contact</h2>
-    <div class="card contact">
-      <p>Email: teacherzey@gmail.com</p>
-      <p>Facebook: Learn English with Teacher Zey</p>
-      <p>Instagram: @teacherzeyenglish</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Learn English with Teacher Zey. All rights reserved.</p>
-  </footer>
-</body>
+    <script src="https://unpkg.com/netlify-cms-app@^2.0.0/dist/netlify-cms.js"></script>
+  </body>
 </html>
